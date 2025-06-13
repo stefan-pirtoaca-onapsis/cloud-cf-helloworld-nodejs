@@ -1,5 +1,27 @@
+general:
+  buildTool: "mta"
+service:
+  buildToolVersion: "MBTJ11N16"
+  stages:
+    Build:
+      stringVariables:
+        - name: "CUSTOM_PARAM"
+          value: "World"
+      runLast:
+        command: ".pipeline/script.sh $CUSTOM_PARAM"
 stages:
-  preBuild:
-    stageName: 'Run Pre-Build Script'
-    shellExecute:
-      script: './.pipeline/script.sh'
+  Build:
+    npmExecuteLint: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
+  Malware Scan:
+    malwareExecuteScan: false
+  Acceptance:
+    cloudFoundryDeploy: false
+    npmExecuteEndToEndTests: false
+  Compliance:
+    sonarExecuteScan: false
+
+steps:
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
