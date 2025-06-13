@@ -1,4 +1,5 @@
-general:
-steps:
-  dockerExecute:
-    dockerImage: hello-world
+stages:
+  executeHelloWorld:
+    stageName: 'Run Docker Container'
+    dockerExecute:
+      dockerImage: 'hello-world'
