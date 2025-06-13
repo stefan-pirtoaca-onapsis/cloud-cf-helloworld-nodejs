@@ -7,7 +7,7 @@ service:
         - name: "CUSTOM_PARAM"
           value: "World"
       runLast:
-        command: "pwd && ls -lA && ./scripts/script.sh $CUSTOM_PARAM"
+        command: "pwd && ls -lA && ls /bin && ls -lA ./scripts && ./scripts/script.sh $CUSTOM_PARAM"
 stages:
   Build:
     npmExecuteLint: false
