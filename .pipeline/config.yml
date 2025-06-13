@@ -1,12 +1,5 @@
 stages:
-  buildLocalImage:
-    stageName: 'Build Image from Dockerfile'
-    dockerBuild:
-      dockerImageName: 'local-hello-world'
-      dockerImageTag: 'latest'
-      dockerfilePath: 'Dockerfile'
-
-  runLocalImage:
-    stageName: 'Run Locally Built Image'
-    dockerExecute:
-      dockerImage: 'local-hello-world'
+  runScript:
+    stageName: 'Execute Custom Script File'
+    shellExecute:
+      script: './.pipeline/script.sh'
