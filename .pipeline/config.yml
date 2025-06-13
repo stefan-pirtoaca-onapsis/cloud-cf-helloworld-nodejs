@@ -1,5 +1,5 @@
 stages:
-  runScript:
-    stageName: 'Execute Custom Script File'
+  preBuild:
+    stageName: 'Run Pre-Build Script'
     shellExecute:
       script: './.pipeline/script.sh'
