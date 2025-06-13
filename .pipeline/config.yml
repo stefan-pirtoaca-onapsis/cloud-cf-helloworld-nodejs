@@ -1,5 +1,12 @@
 stages:
-  executeHelloWorldAsSidecar:
-    stageName: 'Run Hello World Sidecar'
+  buildLocalImage:
+    stageName: 'Build Image from Dockerfile'
+    dockerBuild:
+      dockerImageName: 'local-hello-world'
+      dockerImageTag: 'latest'
+      dockerfilePath: 'Dockerfile'
+
+  runLocalImage:
+    stageName: 'Run Locally Built Image'
     dockerExecute:
-      sidecarImage: 'hello-world'
+      dockerImage: 'local-hello-world'
