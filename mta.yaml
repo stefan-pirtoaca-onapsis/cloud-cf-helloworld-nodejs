@@ -1,0 +1,8 @@
+ID: sample-app
+version: "3.1.0"
+_schema-version: 0.0.1
+
+modules:
+  - name: cloud-cf-helloworld-nodejs
+    type: nodejs
+    path: WebContent
