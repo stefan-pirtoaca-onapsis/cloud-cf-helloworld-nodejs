@@ -1,5 +1,5 @@
 stages:
-  executeHelloWorld:
-    stageName: 'Run Docker Container'
+  executeHelloWorldAsSidecar:
+    stageName: 'Run Hello World Sidecar'
     dockerExecute:
-      dockerImage: 'hello-world'
+      sidecarImage: 'hello-world'
