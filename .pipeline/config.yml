@@ -1,0 +1,4 @@
+general:
+steps:
+  dockerExecute:
+    dockerImage: hello-world
